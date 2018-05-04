@@ -1,0 +1,44 @@
+<div class="container">
+    <!-- <h1 class="brand"><span>Acme</span> Web Design</h1> -->
+    <div class="wrapper">
+        <div class="company-info">
+            <h3>{{_ms.info.titulo}}</h3>
+            <ul>
+                <li><i class="fa fa-road"></i> {{_ms.info.direccion}}</li>
+                <li><i class="fa fa-phone"></i> {{_ms.info.telefono}}</li>
+                <li><i class="fa fa-envelope"></i> {{_ms.info.email}}</li>
+
+            </ul>
+        </div>
+        <div class="contact">
+            <h3>Contactenos</h3>
+            <div class="alert">Your message has been sent</div>
+            <form (ngSubmit)="enviarMensaje() " #forma="ngForm" novalidate="">
+
+                <p>
+                    <label>Nombre</label>
+                    <input class="form-control" type="text" name="nombre" [(ngModel)]="mensaje.nombre" minlength="3" required>
+                </p>
+                <p>
+                    <label>Empresa</label>
+                    <input class="form-control" type="text" name="empresa" [(ngModel)]="mensaje.empresa" minlength="3">
+                </p>
+                <p>
+                    <label>Email</label>
+                    <input class="form-control" type="email" name="email" [(ngModel)]="mensaje.email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$">
+                </p>
+                <p>
+                    <label>Telefono</label>
+                    <input class="form-control" type="text" name="telefono" [(ngModel)]="mensaje.telefono" minlength="3">
+                </p>
+                <p class="full">
+                    <label>Mensaje</label>
+                    <textarea class="form-control" name="mensaje" rows="3" [(ngModel)]="mensaje.mensaje" minlength="3" required></textarea>
+                </p>
+                <p class="full">
+                    <button [disabled]="!forma.valid" type="submit">Enviar</button>
+                </p>
+            </form>
+        </div>
+    </div>
+</div>
