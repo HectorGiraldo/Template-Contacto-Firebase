@@ -11,7 +11,7 @@ export class MensajesService {
   info: any = {};
 
   // tslint:disable-next-line:no-inferrable-types
-  mensajeUrl: string = 'https://template-prueba.firebaseio.com/mensajes.json';
+  mensajeUrl: string = //'https:// {{nombre proyecto}} .firebaseio.com/{{tabla.json}}';
 
   constructor(public http: Http) {
     this.carga_info();
